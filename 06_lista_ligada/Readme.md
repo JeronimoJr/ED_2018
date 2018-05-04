@@ -23,7 +23,7 @@ se o node é nulo, o que quer dizer que chegou ao final da lista ou se o valor q
 é menor/maior (dependendo de como vou ordenar), caso seja verdade a condição, é criado um novo node
 e se encerra o método.
 
-No push_back recursivo, caminho pela minha lista até chegar ao último valor e insiro o valor que quero colocar na lista, crio um novo nó e façõ ele apontar para nulo, assim determinando ele o último valor da lista.
+No push_back recursivo, caminho pela minha lista até chegar ao último valor e insiro o valor que quero colocar na lista, crio um novo nó e faço ele apontar para nulo, assim determinando ele o último valor da lista.
 
 # O que tem dificuldade ainda?
 - No uso de ponteiros e recursão simultaneamente, ainda tenho umas dúvidas 
