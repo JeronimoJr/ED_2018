@@ -11,12 +11,12 @@ o "Right"move o cursor para direita, condição utilizada:
 
 - if(amb.cursor != amb.texto.end())
 
-De forma analoga para o "Left" (move o cursor para esquerda), uso uma condição para o meu
+De forma análoga para o "Left" (move o cursor para esquerda), uso uma condição para o meu
 cursor não extrapolar os limites a esquerda, condição utilizada:
 
 - if(amb.cursor != amb.texto.begin())
 
-No "Delete" apago o caractere da frente do meu cursor, casou houver, e faço ele andar para frente.
+No "Delete" apago o caractere da frente do meu cursor, caso houver, e faço ele andar para frente.
 
 - if(amb.cursor != amb.texto.end()) amb.texto.erase(amb.cursor++);
 
@@ -28,10 +28,11 @@ Nos métodos "Delete" e "Backspace" utilizei a função "erase", que tanto pode 
 de uma lista quanto uma posiçao de determinado intervalo, como é feito no delete e backspace
 respectivamente.
 
+Fiz o trabalho sózinho.
 
 
 # O que tem dificuldade ainda?
  Manipulação do iterador
 
 # Quanto tempo levou pra fazer a atividade?
- Levei um dia
+ Levei um dia.
