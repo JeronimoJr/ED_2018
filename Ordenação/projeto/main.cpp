@@ -21,21 +21,6 @@ void swap_sort(vector<int>& vet){
     }
 }
 
-/*void selection_sort(vector<int>& vet){
-    for(int i = 0; i < (int) vet.size() - 1; i++){
-        int imenor = i;
-        view_set_faixa(i, vet.size() - 1);
-        for(int j = i + 1; j < (int) vet.size(); j++){
-            view_show(vet, {i, j, imenor}, "ygr");
-            if(vet[j] < vet[imenor]){
-                imenor = j;
-                view_show(vet, {i, j, imenor}, "ygr");
-            }
-        }
-        std::swap(vet[imenor], vet[i]);
-    }
-}*/
-
 
 // feito
 void selection_sort(vector<int> &vet){
@@ -53,6 +38,30 @@ void selection_sort(vector<int> &vet){
         if(i != j)
             std:: swap(vet[menor],vet[i]);
     }
+}
+
+
+// feito
+#define MAX 400
+void countingSort(vector<int>& vet){
+    int i, j, k;
+
+    int vetor[MAX];
+
+    for(i = 0; i < MAX; i++)
+        vetor[i] = 0;
+
+    for(i = 0; i < vet.size(); i++)
+        vetor[vet[i]]++;
+
+    for(i = 0, j = 0; j < MAX; j++){
+        for(k = vetor[j]; k > 0; k--)
+            vet[i++] = j;
+        view_show(vet, {i,j,k}, "ygr");
+    }
+
+
+
 }
 
 void reverse_minimum_sort(vector<int>& vet){
@@ -114,7 +123,7 @@ void bubble_sort(vector<int> &vet){
 
 
 
-void insertion_sort(vector<int>& vet){
+/*void insertion_sort(vector<int>& vet){
     for(int i = 1; i < (int) vet.size(); i++){
         for(int j = i; j > 0; j--){
             view_show(vet, {i, j, j - 1}, "rgy");
@@ -127,7 +136,23 @@ void insertion_sort(vector<int>& vet){
         }
 
     }
+}*/
+void insertion_sort(vector<int>& vet){
+    int aux, j, i;
+    aux = j = i = 0;
+
+    for(int i = 1; i < (int) vet.size(); i++){
+        aux = vet[i];
+        for(int j = i - 1; j >= 0 && aux < vet[j]; j--){
+            view_show(vet, {i,j,j-1}, "rgy");
+            vet[j+1] = vet[j];
+        }
+        vet[j+1] = aux;
+        view_show(vet, {i,j,j-1}, "rgy");
+    }
 }
+
+
 #define qshow view_show(vet, {C, F, esq, dir}, "rgby")
 int particiona(vector<int> &vet, int C, int F){
    int esq, dir, pivo, aux;
@@ -255,7 +280,8 @@ int main(){
     //Feitos ou revisados por mim
     //bubble_sort(vet);
     //selection_sort(vet);
-    quickSort(vet,0,vet.size() - 1);
+    //quickSort(vet,0,vet.size() - 1);
+    countingSort(vet);
     view_lock();
     return 0;
 }
